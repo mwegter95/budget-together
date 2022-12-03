@@ -2,15 +2,20 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { AppProvider } from './context/AppContext';
+import Login from './components/Login'
 import Budget from './components/Budget';
 import ExpenseTotal from './components/ExpenseTotal';
 import ExpenseList from './components/ExpenseList';
 import AddExpenseForm from './components/AddExpenseForm';
 import RemainingBudget from './components/Remaining';
 
+let isLoggedIn = false;
+
 const App = () => {
 	return (
 		<AppProvider>
+			{!isLoggedIn && 
+			<Login></Login>}
 			<div className='container'>
 				<h1 className='mt-3'>My Budget Planner</h1>
 				<div className='row mt-3'>
