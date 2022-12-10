@@ -7,6 +7,8 @@ const AddExpenseForm = (props) => {
 
 	const [name, setName] = useState('');
 	const [cost, setCost] = useState('');
+	const [date, setDate] = useState('');
+	const [splitAmount, setSplitAmount] = useState('');
 
 	const onSubmit = (event) => {
 		event.preventDefault();
@@ -14,6 +16,8 @@ const AddExpenseForm = (props) => {
 			id: uuidv4(),
 			name,
 			cost: parseInt(cost),
+			date,
+			splitAmount
 		};
 
 		dispatch({
@@ -23,13 +27,15 @@ const AddExpenseForm = (props) => {
 
 		setName('');
 		setCost('');
+		setDate('');
+		setSplitAmount('');
 	};
 
 	return (
 		<form onSubmit={onSubmit}>
 			<div class='row'>
 				<div class='col-sm col-lg-4'>
-					<label for='name'>Name</label>
+					<label for='name'>Expense Name</label>
 					<input
 						required='required'
 						type='text'
@@ -48,6 +54,28 @@ const AddExpenseForm = (props) => {
 						id='cost'
 						value={cost}
 						onChange={(event) => setCost(event.target.value)}
+					/>
+				</div>
+				<div class='col-sm col-lg-4'>
+					<label for='date'>Date</label>
+					<input
+						required='required'
+						type='date'
+						class='form-control'
+						id='date'
+						value={date}
+						onChange={(event) => setDate(event.target.value)}
+					/>
+				</div>
+				<div class='col-sm col-lg-4'>
+					<label for='splitAmount'>Split Amount, percent or dollar</label>
+					<input
+						required='required'
+						type='text'
+						class='form-control'
+						id='splitAmount'
+						value={splitAmount}
+						onChange={(event) => setSplitAmount(event.target.value)}
 					/>
 				</div>
 			</div>
