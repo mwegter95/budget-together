@@ -16,30 +16,28 @@ const App = () => {
 		<AppProvider>
 			{!isLoggedIn && 
 			<Login></Login>}
+			<h1 className='col-4 mt-3'>Budget Ultra Deluxe</h1>
 			<div className='container'>
-				<h1 className='mt-3'>My Budget Planner</h1>
-				<div className='row mt-3'>
-					<div className='col-sm'>
-						<Budget />
-					</div>
-					<div className='col-sm'>
-						<RemainingBudget />
-					</div>
-					<div className='col-sm'>
-						<ExpenseTotal />
-					</div>
+				<div className='row'>
+					<Budget />
 				</div>
-				<h3 className='mt-3'>Expenses</h3>
-				<div className='row '>
-					<div className='col-sm'>
-						<ExpenseList />
-					</div>
+				<div className='row'>
+					<RemainingBudget />
 				</div>
-				<h3 className='mt-3'>Add Expense</h3>
-				<div className='row mt-3'>
-					<div className='col-sm'>
-						<AddExpenseForm />
-					</div>
+				<div className='row'>
+					<ExpenseTotal />
+				</div>
+			</div>
+			<h3 className='mt-3'>Expenses</h3>
+			<div className='row '>
+				<div className='col-sm'>
+					<ExpenseList />
+				</div>
+			</div>
+			<h3 className='mt-3'>Add Expense</h3>
+			<div className='row mt-3'>
+				<div className='col-sm'>
+					<AddExpenseForm />
 				</div>
 			</div>
 		</AppProvider>
